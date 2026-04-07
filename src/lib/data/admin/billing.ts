@@ -49,19 +49,23 @@ export async function updateUserPlan(userId: string, plan: "free" | "pro") {
 }
 
 export async function getSubscriptionStats() {
-  const { count: freeUsers } = await supabase
-    .from("profiles")
-    .select("*", { count: "exact", head: true })
-    .eq("plan", "free");
+  // const { count: freeUsers } = await supabase
+  //   .from("profiles")
+  //   .select("*", { count: "exact", head: true })
+  //   .eq("plan", "free");
 
-  const { count: proUsers } = await supabase
-    .from("profiles")
-    .select("*", { count: "exact", head: true })
-    .eq("plan", "pro");
+  // const { count: proUsers } = await supabase
+  //   .from("profiles")
+  //   .select("*", { count: "exact", head: true })
+  //   .eq("plan", "pro");
 
   return {
-    free: freeUsers || 0,
-    pro: proUsers || 0,
-    total: (freeUsers || 0) + (proUsers || 0),
+    free: 0,
+    pro: 0,
+    // free: freeUsers || 0,
+    // pro: proUsers || 0,
+    // total: (freeUsers || 0) + (proUsers || 0),
+    // total: freeUsers || 0,
+    total: 0,
   };
 }

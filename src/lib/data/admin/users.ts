@@ -11,9 +11,9 @@ export async function fetchUsers(
     .from("profiles")
     .select("id, username, created_at, updated_at, plan", { count: "exact" });
 
-  if (filters.plan) {
-    query = query.eq("plan", filters.plan);
-  }
+  // if (filters.plan) {
+  //   query = query.eq("plan", filters.plan);
+  // }
 
   if (filters.dateRange) {
     query = query
@@ -64,7 +64,8 @@ export async function fetchUsers(
       id: profile.id,
       email: authUser?.email || "No email",
       name: profile.username || authUser?.email?.split("@")[0] || "Unknown",
-      plan: (profile.plan as "free" | "pro") || "free",
+      // plan: (profile.plan as "free" | "pro") || "free",
+      plan: "free",
       instagram: profile.instagram || null,
       linkedin: profile.linkedin || null,
       facebook: profile.facebook || null,
@@ -102,7 +103,8 @@ export async function fetchUserById(id: string): Promise<AdminUser | null> {
     id: profile.id,
     email: authUser?.email || "No email",
     name: profile.username || "Unknown",
-    plan: (profileAny.plan as "free" | "pro") || "free",
+    // plan: (profileAny.plan as "free" | "pro") || "free",
+    plan: "free",
     instagram: profileAny.instagram || null,
     linkedin: profileAny.linkedin || null,
     facebook: profileAny.facebook || null,
