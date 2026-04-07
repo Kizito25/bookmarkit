@@ -1,0 +1,37 @@
+# fly.toml app configuration file generated for bookmc on 2025-10-28T00:01:00+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'bookmc'
+primary_region = 'lhr'
+
+[build]
+  [build.args]
+    VITE_SUPABASE_URL = ""
+    VITE_SUPABASE_ANON_KEY = ""
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+  [[services.ports]]
+    port = 8080
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/"
+
+[env]
+  PORT = '8080'
+  HOST = '0.0.0.0'
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

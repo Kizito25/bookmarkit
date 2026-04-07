@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookmarkly</title>
+
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- iOS PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bookmarkly" />
+  <link rel="apple-touch-icon" href="/icon-180.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon-152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png" />
+  <link rel="apple-touch-icon" sizes="167x167" href="/icon-167.png" />
+
+  <!-- Android PWA Meta Tags -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Bookmarkly" />
+
+  <meta name="description" content="A beautiful and efficient way to manage your bookmarks." />
+  <meta name="author" content="Bookmark Manager" />
+
+  <meta property="og:title" content="Bookmark Manager" />
+  <meta property="og:description" content="A beautiful and efficient way to manage your bookmarks." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alpha.dualite.dev" />
+  <meta property="og:image" content="https://i.imgur.com/your-preview-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A preview of the Bookmark Manager application interface." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bookmark Manager" />
+  <meta name="twitter:description" content="A beautiful and efficient way to manage your bookmarks." />
+  <meta name="twitter:site" content="@dualitedev" />
+  <meta name="twitter:image" content="https://i.imgur.com/your-preview-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+
+</html>
