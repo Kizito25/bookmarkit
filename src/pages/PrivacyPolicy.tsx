@@ -1,9 +1,98 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "@/assets/logo.svg"
 
 export function PrivacyPolicyPage() {
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-muted/30 px-4 py-10 text-base leading-relaxed text-muted-foreground">
-      <div className="mx-auto max-w-4xl rounded-xl bg-background p-8 shadow-sm">
+        {/* Floating Header */}
+      <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+        <div className="bg-white/90 backdrop-blur-md rounded-2xl border border-gray-200/50 shadow-lg">
+          <div className="flex justify-between items-center px-6 py-4">
+            <div className="flex items-center space-x-2">
+              {/* <Bookmark className="h-7 w-7 text-emerald-500" /> */}
+              <img src={Logo} alt="Logo" className="h-7 w-7" />
+              <span className="text-xl font-bold text-black">
+                Bookmarkly
+              </span>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <a
+                href="#pricing"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Pricing
+              </a>
+              <a
+                href="#about"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                About
+              </a>
+              <div className="flex items-center space-x-3">
+                <Link
+                  to="/login"
+                  className="bg-gray-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                >
+                  Login/ Sign Up
+                </Link>
+              </div>
+            </nav>
+
+            {/* Mobile Hamburger Menu */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden flex flex-col justify-center items-center w-8 h-8 relative"
+            >
+              <div
+                className={`w-6 h-0.5 bg-gray-900 absolute transition-all duration-300 ${
+                  mobileMenuOpen ? "rotate-45" : "translate-y-1"
+                }`}
+              ></div>
+              <div
+                className={`w-6 h-0.5 bg-gray-900 absolute transition-all duration-300 ${
+                  mobileMenuOpen ? "-rotate-45" : "-translate-y-1"
+                }`}
+              ></div>
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden border-t border-gray-200/50 px-6 py-4 space-y-4">
+              <a
+                href="#pricing"
+                className="block text-gray-600 hover:text-gray-900 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Pricing
+              </a>
+              <a
+                href="#about"
+                className="block text-gray-600 hover:text-gray-900 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
+              </a>
+
+              <Link
+                to="/login"
+                className="block bg-gray-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors text-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Login/ Sign Up
+              </Link>
+            </div>
+          )}
+        </div>
+        {/* Mobile Menu end */}
+      </header>
+
+      <div className="mx-auto mt-20 max-w-4xl rounded-xl bg-background p-8 shadow-sm">
         <header className="mb-8 space-y-3 text-foreground">
           <p className="text-xs uppercase tracking-wide text-muted-foreground">
             Last updated: 20 January 2025

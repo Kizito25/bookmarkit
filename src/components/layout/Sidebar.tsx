@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BookMarked } from "lucide-react";
+// import { BookMarked } from "lucide-react";
 import { NavContent } from "./NavContent";
 import Logo from "@/assets/logo.svg"
 
