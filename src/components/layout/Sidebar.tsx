@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BookMarked } from "lucide-react";
 import { NavContent } from "./NavContent";
+import Logo from "@/assets/logo.svg"
 
 export function Sidebar() {
   return (
@@ -11,7 +12,8 @@ export function Sidebar() {
             to="/dashboard"
             className="flex items-center gap-2 font-semibold text-primary"
           >
-            <BookMarked className="h-6 w-6  text-primary" />
+            {/* <BookMarked className="h-6 w-6  text-primary" /> */}
+            <img src={Logo} alt="Logo" className="h-6 w-6" />
             <span>Bookmarkly</span>
           </Link>
         </div>

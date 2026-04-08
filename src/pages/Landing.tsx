@@ -10,6 +10,7 @@ import {
   // useScroll,
   // useTransform
 } from "framer-motion";
+import Logo from "@/assets/logo.svg"
 
 export default function Landing() {
   // const triggerRef = useRef<HTMLDivElement>(null);
@@ -44,8 +45,9 @@ export default function Landing() {
         <div className="bg-white/90 backdrop-blur-md rounded-2xl border border-gray-200/50 shadow-lg">
           <div className="flex justify-between items-center px-6 py-4">
             <div className="flex items-center space-x-2">
-              <Bookmark className="h-7 w-7 text-emerald-500" />
-              <span className="text-xl font-bold text-emerald-500">
+              {/* <Bookmark className="h-7 w-7 text-emerald-500" /> */}
+              <img src={Logo} alt="Logo" className="h-7 w-7" />
+              <span className="text-xl font-bold text-black">
                 Bookmarkly
               </span>
             </div>
