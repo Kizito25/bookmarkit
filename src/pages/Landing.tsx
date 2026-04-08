@@ -5,7 +5,7 @@ import {
 } from "react";
 import { Link } from "react-router-dom";
 import { 
-  // Bookmark,
+  Bookmark,
   Star, Tag, TagIcon } from "lucide-react";
 import {
   motion,
@@ -46,13 +46,13 @@ export default function Landing() {
       <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
         <div className="bg-white/90 backdrop-blur-md rounded-2xl border border-gray-200/50 shadow-lg">
           <div className="flex justify-between items-center px-6 py-4">
-            <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               {/* <Bookmark className="h-7 w-7 text-emerald-500" /> */}
               <img src={Logo} alt="Logo" className="h-7 w-7" />
               <span className="text-xl font-bold text-black">
                 Bookmarkly
               </span>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
