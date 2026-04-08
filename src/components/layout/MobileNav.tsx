@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, BookMarked } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NavContent } from "./NavContent";
+import Logo from "@/assets/logo.svg"
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -13,6 +14,7 @@ export function MobileNav() {
       <SheetTrigger asChild>
         <Button variant="outline" size="icon" className="shrink-0 md:hidden">
           <Menu className="h-5 w-5" />
+          
           <span className="sr-only">Toggle navigation menu</span>
         </Button>
       </SheetTrigger>
@@ -23,7 +25,7 @@ export function MobileNav() {
             className="flex items-center gap-2 font-semibold text-primary"
             onClick={() => setOpen(false)}
           >
-            <BookMarked className="h-6 w-6" />
+            <img src={Logo} alt="Logo" className="h-6 w-6" />
             <span>Bookmarkly</span>
           </Link>
         </div>

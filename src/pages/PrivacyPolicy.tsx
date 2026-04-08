@@ -170,10 +170,10 @@ export function PrivacyPolicyPage() {
               If you have questions about this Privacy Policy or our data
               practices, contact us at{" "}
               <a
-                href="mailto:privacy@bookmarkly.com"
+                href="mailto:privacy@kizito.dev"
                 className="text-primary underline"
               >
-                privacy@bookmarkly.com
+               privacy@kizito.dev
               </a>
               .
             </p>

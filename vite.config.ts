@@ -65,6 +65,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "./src"),
+      "~": path.resolve(import.meta.dirname, "./public"),
     },
   },
   optimizeDeps: {
