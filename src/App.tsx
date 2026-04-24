@@ -27,6 +27,7 @@ import { RolesPage } from "./pages/admin/Roles";
 import { AuditLogsPage } from "./pages/admin/AuditLogs";
 import { AdminDataRequestsPage } from "./pages/admin/DataRequests";
 import { PrivacyPolicyPage } from "./pages/PrivacyPolicy";
+import { TermsOfUsePage } from "./pages/TermsOfUse";
 // wherever your routes are defined
 import { AuthCallback } from "@/pages/AuthCallback";
 
@@ -123,6 +124,7 @@ function AppRoutes() {
       />
       <Route path="/auth/callback" element={<AuthCallback />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      <Route path="/terms-of-use" element={<TermsOfUsePage />} />
       <Route
         path="/dashboard/*"
         element={

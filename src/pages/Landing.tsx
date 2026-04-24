@@ -4,15 +4,13 @@ import {
   // useRef
 } from "react";
 import { Link } from "react-router-dom";
-import { 
-  Bookmark,
-  Star, Tag, TagIcon } from "lucide-react";
+import { Bookmark, Star, Tag, TagIcon } from "lucide-react";
 import {
   motion,
   // useScroll,
   // useTransform
 } from "framer-motion";
-import Logo from "@/assets/logo.svg"
+import Logo from "@/assets/logo.svg";
 
 export default function Landing() {
   // const triggerRef = useRef<HTMLDivElement>(null);
@@ -49,9 +47,7 @@ export default function Landing() {
             <Link to="/" className="flex items-center space-x-2">
               {/* <Bookmark className="h-7 w-7 text-emerald-500" /> */}
               <img src={Logo} alt="Logo" className="h-7 w-7" />
-              <span className="text-xl font-bold text-black">
-                Bookmarkly
-              </span>
+              <span className="text-xl font-bold text-black">Bookmarkly</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -534,6 +530,23 @@ export default function Landing() {
         </p>
       </motion.section>
       {/* Footer end */}
+      {/* Footer Section */}
+      <footer className="bg-gray-100 text-gray-600 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center space-x-6">
+          <Link
+            to="/privacy-policy"
+            className="hover:text-gray-900 transition-colors"
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            to="/terms-of-use"
+            className="hover:text-gray-900 transition-colors"
+          >
+            Terms of Use
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }
