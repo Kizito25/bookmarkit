@@ -47,7 +47,7 @@ export default function Landing() {
             <Link to="/" className="flex items-center space-x-2">
               {/* <Bookmark className="h-7 w-7 text-emerald-500" /> */}
               <img src={Logo} alt="Logo" className="h-7 w-7" />
-              <span className="text-xl font-bold text-black">Bookmarkly</span>
+              <span className="text-xl font-bold text-black">Bookmarked</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -280,7 +280,7 @@ export default function Landing() {
                 Download
               </p>
               <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
-                Take Bookmarkly everywhere you browse
+                Take Bookmarked everywhere you browse
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Grab the desktop app to save, tag, and reopen links without
@@ -428,13 +428,13 @@ export default function Landing() {
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                About Bookmarkly
+                About Bookmarked
               </div>
               <h3 className="text-4xl lg:text-5xl font-black leading-tight">
                 The calm way to remember everything you find on the web
               </h3>
               <p className="text-lg text-gray-200/90 leading-relaxed">
-                Bookmarkly keeps your discoveries tidy with tags, lightning-fast
+                Bookmarked keeps your discoveries tidy with tags, lightning-fast
                 search, and pinned shortcuts. Save from any device, reopen
                 instantly, and never worry about losing what inspired you.
                 Former Pocket App by Mozilla was the motivation behind building

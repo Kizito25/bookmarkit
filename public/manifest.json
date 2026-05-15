@@ -1,7 +1,7 @@
 {
-  "name": "Bookmarkly - Bookmark Manager",
-  "short_name": "Bookmarkly",
-  "description": "Save, organize and manage your bookmarks with ease",
+  "name": "Bookmarked - Smart Bookmark Manager",
+  "short_name": "Bookmarked",
+  "description": "Sync your bookmarks across multiple devices over the cloud.", 
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",

@@ -50,7 +50,7 @@ export function AdminMobileNav() {
           onClick={() => setOpen(false)}
         >
           <BookMarked className="h-6 w-6" />
-          <span>Bookmarkly Admin</span>
+          <span>Bookmarked Admin</span>
         </Link>
         <nav className="grid items-start px-4 py-4 text-sm font-medium">
           {navItems.map(({ icon: Icon, label, path }) => (

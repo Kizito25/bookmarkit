@@ -34,8 +34,8 @@ export default defineConfig({
         ],
       },
       manifest:{
-        name: "Bookmc Bookmark Manager",
-        short_name: "Bookmc",
+        name: "Bookmarked - Smart Bookmark Manager",
+        short_name: "Bookmarked",
         description: "Never forget a link again.",       
         theme_color: '#0f172a',
         background_color: '#ffffff',

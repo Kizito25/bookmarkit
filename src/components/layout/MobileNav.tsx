@@ -26,7 +26,7 @@ export function MobileNav() {
             onClick={() => setOpen(false)}
           >
             <img src={Logo} alt="Logo" className="h-6 w-6" />
-            <span>Bookmarkly</span>
+            <span>Bookmarked</span>
           </Link>
         </div>
         <NavContent onLinkClick={() => setOpen(false)} />

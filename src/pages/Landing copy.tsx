@@ -22,7 +22,7 @@ export default function Landing() {
             <div className="flex items-center space-x-2">
               <Bookmark className="h-7 w-7 text-emerald-500" />
               <span className="text-xl font-bold text-emerald-500">
-                Bookmarkly
+                Bookmarked
               </span>
             </div>
 
@@ -239,7 +239,7 @@ export default function Landing() {
             <h3 className="text-2xl lg:text-4xl font-bold mb-4">About</h3>
             <p className="text-5xl text-slate-600 leading-tight font-extrabold landing-header-text">
               {/* <p className="text-3xl text-slate-600 max-w-2xl"> */}
-              Bookmarkly is basically my version of Pocket, but fresher, faster,
+              Bookmarked is basically my version of Pocket, but fresher, faster,
               and fully mine. You can save links, tag them, search them, and
               come back later without fear that some company will shut down and
               carry your bookmarks to heaven. You can use it if you’re the type

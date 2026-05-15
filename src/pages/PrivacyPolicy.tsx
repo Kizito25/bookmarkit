@@ -15,7 +15,7 @@ export function PrivacyPolicyPage() {
               {/* <Bookmark className="h-7 w-7 text-emerald-500" /> */}
               <img src={Logo} alt="Logo" className="h-7 w-7" />
               <span className="text-xl font-bold text-black">
-                Bookmarkly
+                Bookmarked
               </span>
             </Link>
 
@@ -99,9 +99,9 @@ export function PrivacyPolicyPage() {
           </p>
           <h1 className="text-3xl font-semibold">Privacy Policy</h1>
           <p>
-            Bookmarkly is committed to protecting your privacy. This Privacy
+            Bookmarked is committed to protecting your privacy. This Privacy
             Policy explains how we collect, use, disclose, and safeguard your
-            information when you use the Bookmarkly web application, mobile
+            information when you use the Bookmarked web application, mobile
             experiences, or related services (collectively, the "Service").
           </p>
         </header>
@@ -194,7 +194,7 @@ export function PrivacyPolicyPage() {
             </h2>
             <p className="mt-3">
               We do not sell your personal information. We may share limited
-              data with trusted subprocessors that help us operate Bookmarkly
+              data with trusted subprocessors that help us operate Bookmarked
               (e.g., Supabase, analytics, email providers) under strict data
               processing agreements. We may disclose information if required by
               law, to protect our rights, or as part of a business transaction
@@ -207,7 +207,7 @@ export function PrivacyPolicyPage() {
               6. International Transfers
             </h2>
             <p className="mt-3">
-              Bookmarkly may process data on servers located in the United
+              Bookmarked may process data on servers located in the United
               States and other jurisdictions. Where required, we rely on
               Standard Contractual Clauses or other approved safeguards to
               protect cross-border transfers.
@@ -244,7 +244,7 @@ export function PrivacyPolicyPage() {
               9. Children's Privacy
             </h2>
             <p className="mt-3">
-              Bookmarkly is not directed to children under 13 (or older age
+              Bookmarked is not directed to children under 13 (or older age
               thresholds where required). We do not knowingly collect personal
               information from children. If we become aware that a child has
               provided personal data, we will take steps to delete it.
@@ -259,10 +259,10 @@ export function PrivacyPolicyPage() {
               If you have questions about this Privacy Policy or our data
               practices, contact us at{" "}
               <a
-                href="mailto:privacy@kizito.dev"
+                href="mailto:privacy@bookmarked.cloud"
                 className="text-primary underline"
               >
-               privacy@kizito.dev
+               privacy@bookmarked.cloud
               </a>
               .
             </p>

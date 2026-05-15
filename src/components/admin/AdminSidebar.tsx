@@ -44,7 +44,7 @@ export function AdminSidebar() {
         <div className="flex h-16 items-center border-b px-6 flex-shrink-0">
           <div className="flex items-center gap-2 font-semibold">
             <BookMarked className="h-6 w-6" />
-            <span>Bookmarkly Admin</span>
+            <span>Bookmarked Admin</span>
           </div>
         </div>
         <div className="flex flex-col flex-1 min-h-0 overflow-y-auto">

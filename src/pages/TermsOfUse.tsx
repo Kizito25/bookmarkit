@@ -13,7 +13,7 @@ export function TermsOfUsePage() {
           <div className="flex justify-between items-center px-6 py-4">
             <Link to="/" className="flex items-center space-x-2">
               <img src={Logo} alt="Logo" className="h-7 w-7" />
-              <span className="text-xl font-bold text-black">Bookmarkly</span>
+              <span className="text-xl font-bold text-black">Bookmarked</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -97,7 +97,7 @@ export function TermsOfUsePage() {
           <h1 className="text-3xl font-semibold">Terms of Use</h1>
           <p>
             These Terms of Use ("Terms") govern your access to and use of the
-            Bookmarkly web application, mobile experiences, and related services
+            Bookmarked web application, mobile experiences, and related services
             (collectively, the "Service"). By using the Service, you agree to
             these Terms and our Privacy Policy. If you do not agree, do not use
             the Service.
@@ -136,7 +136,7 @@ export function TermsOfUsePage() {
             </h2>
             <p className="mt-3">
               You retain ownership of bookmarks, notes, tags, and other content
-              you submit to Bookmarkly ("User Content"). You grant us a limited,
+              you submit to Bookmarked ("User Content"). You grant us a limited,
               non-exclusive license to host, process, and display User Content
               only as necessary to operate, secure, and improve the Service.
             </p>
@@ -152,7 +152,7 @@ export function TermsOfUsePage() {
                 or deceptive content through the Service.
               </li>
               <li>
-                You must not use Bookmarkly to send spam, malware, or phishing
+                You must not use Bookmarked to send spam, malware, or phishing
                 links.
               </li>
               <li>
@@ -168,7 +168,7 @@ export function TermsOfUsePage() {
             </h2>
             <p className="mt-3">
               The Service, including its software, branding, logos, and design,
-              is owned by Bookmarkly or its licensors and protected by
+              is owned by Bookmarked or its licensors and protected by
               intellectual property laws. Except where expressly permitted, you
               may not reproduce, modify, distribute, or create derivative works
               from any part of the Service.
@@ -180,7 +180,7 @@ export function TermsOfUsePage() {
               6. Third-Party Services and Links
             </h2>
             <p className="mt-3">
-              Bookmarkly may integrate with or link to third-party websites,
+              Bookmarked may integrate with or link to third-party websites,
               APIs, and tools. We do not control third-party services and are
               not responsible for their availability, content, or policies.
               Your use of those services is governed by their own terms.
@@ -206,7 +206,7 @@ export function TermsOfUsePage() {
             </h2>
             <p className="mt-3">
               The Service is provided on an "as is" and "as available" basis.
-              To the fullest extent permitted by law, Bookmarkly disclaims all
+              To the fullest extent permitted by law, Bookmarked disclaims all
               warranties, express or implied, including fitness for a particular
               purpose, merchantability, and non-infringement.
             </p>
@@ -217,7 +217,7 @@ export function TermsOfUsePage() {
               9. Limitation of Liability
             </h2>
             <p className="mt-3">
-              To the maximum extent permitted by law, Bookmarkly and its
+              To the maximum extent permitted by law, Bookmarked and its
               affiliates will not be liable for any indirect, incidental,
               special, consequential, or punitive damages, or any loss of data,
               profits, or revenue, arising from or related to your use of the
@@ -243,7 +243,7 @@ export function TermsOfUsePage() {
             </h2>
             <p className="mt-3">
               These Terms are governed by applicable laws in your jurisdiction
-              and, where not prohibited, by the laws governing Bookmarkly's
+              and, where not prohibited, by the laws governing Bookmarked's
               principal place of business, without regard to conflict-of-law
               rules.
             </p>
@@ -257,10 +257,10 @@ export function TermsOfUsePage() {
               If you have any questions about these Terms, contact us at
               {" "}
               <a
-                href="mailto:support@kizito.dev"
+                href="mailto:support@bookmarked.cloud"
                 className="text-primary underline"
               >
-                support@kizito.dev
+                support@bookmarked.cloud
               </a>
               .
             </p>

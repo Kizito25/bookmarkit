@@ -14,7 +14,7 @@ export function Sidebar() {
           >
             {/* <BookMarked className="h-6 w-6  text-primary" /> */}
             <img src={Logo} alt="Logo" className="h-6 w-6" />
-            <span>Bookmarkly</span>
+            <span>Bookmarked</span>
           </Link>
         </div>
         <div className="flex flex-col flex-1 min-h-0">
