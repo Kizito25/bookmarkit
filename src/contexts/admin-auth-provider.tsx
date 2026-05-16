@@ -1,63 +1,104 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-
-interface AdminUser {
-  id: string;
-  email: string;
-  role: 'super_admin' | 'admin';
-}
+import {
+  ADMIN_SESSION_STORAGE_KEY,
+  AdminUser,
+  loginWithAdminApi,
+  logoutAdminApi,
+  StoredAdminSession,
+  verifyAdminSession,
+} from '@/lib/admin-auth-api';
 
 interface AdminAuthContextType {
   adminUser: AdminUser | null;
   login: (email: string, password: string) => Promise<boolean>;
-  logout: () => void;
+  logout: () => Promise<void>;
   loading: boolean;
 }
 
 const AdminAuthContext = createContext<AdminAuthContextType | undefined>(undefined);
+
+function readStoredSession(): StoredAdminSession | null {
+  const stored = localStorage.getItem(ADMIN_SESSION_STORAGE_KEY);
+  if (!stored) return null;
+  try {
+    const parsed = JSON.parse(stored) as Partial<StoredAdminSession> & { user?: AdminUser };
+    if (
+      !parsed?.token ||
+      !parsed?.user?.id ||
+      !parsed?.user?.email ||
+      !parsed?.expiresAt ||
+      (parsed.user.role !== 'super_admin' && parsed.user.role !== 'admin')
+    ) {
+      localStorage.removeItem(ADMIN_SESSION_STORAGE_KEY);
+      return null;
+    }
+    if (new Date(parsed.expiresAt) <= new Date()) {
+      localStorage.removeItem(ADMIN_SESSION_STORAGE_KEY);
+      return null;
+    }
+    return {
+      token: parsed.token,
+      user: {
+        id: parsed.user.id,
+        email: parsed.user.email,
+        role: parsed.user.role,
+      },
+      expiresAt: parsed.expiresAt,
+    };
+  } catch {
+    localStorage.removeItem(ADMIN_SESSION_STORAGE_KEY);
+    return null;
+  }
+}
 
 export function AdminAuthProvider({ children }: { children: ReactNode }) {
   const [adminUser, setAdminUser] = useState<AdminUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    checkSession();
+    void checkSession();
   }, []);
 
   const checkSession = async () => {
-    const stored = localStorage.getItem('admin_session');
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored) as { user: AdminUser; expiresAt: string };
-        if (new Date(parsed.expiresAt) > new Date()) {
-          setAdminUser(parsed.user);
-        } else {
-          localStorage.removeItem('admin_session');
-        }
-      } catch {
-        localStorage.removeItem('admin_session');
-      }
+    const local = readStoredSession();
+    if (!local) {
+      setLoading(false);
+      return;
+    }
+
+    const verified = await verifyAdminSession(local.token);
+    if (verified.ok) {
+      const { session } = verified;
+      localStorage.setItem(ADMIN_SESSION_STORAGE_KEY, JSON.stringify(session));
+      setAdminUser(session.user);
+    } else {
+      localStorage.removeItem(ADMIN_SESSION_STORAGE_KEY);
+      setAdminUser(null);
     }
     setLoading(false);
   };
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    // Demo-only auth. Replace with real backend if needed.
-    if (email === 'admin@bookmarkly.com' && password === 'admin123') {
-      const user: AdminUser = {
-        id: 'demo-admin',
-        email,
-        role: 'super_admin',
-      };
-      const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
-      localStorage.setItem('admin_session', JSON.stringify({ user, expiresAt: expiresAt.toISOString() }));
-      setAdminUser(user);
-      return true;
+    const result = await loginWithAdminApi(email, password);
+    if (!result.ok) {
+      return false;
     }
-    return false;
+    const { session } = result;
+    localStorage.setItem(ADMIN_SESSION_STORAGE_KEY, JSON.stringify(session));
+    setAdminUser(session.user);
+    return true;
   };
 
   const logout = async () => {
-    localStorage.removeItem('admin_session');
+    const local = readStoredSession();
+    if (local?.token) {
+      try {
+        await logoutAdminApi(local.token);
+      } catch {
+        // Still clear local session if the network call fails.
+      }
+    }
+    localStorage.removeItem(ADMIN_SESSION_STORAGE_KEY);
     setAdminUser(null);
   };
 
@@ -75,3 +116,5 @@ export const useAdminAuth = () => {
   }
   return context;
 };
+
+export type { AdminUser };
