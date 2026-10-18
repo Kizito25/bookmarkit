@@ -4,7 +4,7 @@ import {
   // useRef
 } from "react";
 import { Link } from "react-router-dom";
-import { Bookmark, Star, Tag, TagIcon } from "lucide-react";
+import { Bookmark, Star, Tag, TagIcon, ChromeIcon, ArrowDownToLine } from "lucide-react";
 import {
   motion,
   // useScroll,
@@ -149,7 +149,7 @@ export default function Landing() {
 
             <Link
               to="/signup"
-              className="landing-header-text inline-block bg-gray-900 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-800 transition-colors"
+              className="landing-header-text inline-block bg-black text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-800 transition-colors"
             >
               Get Started
             </Link>
@@ -277,27 +277,17 @@ export default function Landing() {
                 handy, while smart sync mirrors your collections instantly.
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                <a className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gray-900 px-6 py-3 text-white text-base font-semibold shadow-lg shadow-gray-900/15 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-500/20">
-                  <span>Download for macOS</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.8"
-                      d="M12 16V4m0 12-3.5-3.5M12 16l3.5-3.5M5 18h14"
-                    />
-                  </svg>
+                <a 
+                href="https://play.google.com/store/apps/details?id=com.bookmarkit.app&pcampaignid=web_share"
+                target="_blank"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gray-900 px-6 py-3 text-white text-base font-semibold shadow-lg shadow-gray-900/15 transition hover:shadow-xl hover:shadow-black/20">
+                  <span>Download for Android</span>
+                  <ArrowDownToLine className="h-5 w-5" />
                 </a>
-                <button className="inline-flex items-center gap-2 text-gray-800 font-semibold">
-                  <span>Use in browser</span>
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                </button>
+                <a href="https://chromewebstore.google.com/detail/jcegkoiipgaehbfgfhipodgeklehmmno?utm_source=item-share-cb" target="_blank" className="inline-flex items-center gap-2 text-gray-800 px-6 py-3 rounded-2xl font-semibold transition hover:shadow-lg hover:bg-gray-50">
+                  <span>Chrome Extension</span>
+                  <ChromeIcon className="h-5 w-5" />
+                </a>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                 {[
