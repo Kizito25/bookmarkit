@@ -182,7 +182,7 @@ export default function Landing() {
           </div>
 
           {/* Bookmark Management */}
-          <div className="bg-gradient-to-br  max-h-min from-gray-800 to-gray-900 rounded-2xl p-8 text-white relative overflow-hidden">
+          <div className="bg-black max-h-min rounded-2xl p-8 text-white relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-2xl font-bold mb-4">
                 Build the bookmark collection you want.
@@ -259,26 +259,15 @@ export default function Landing() {
       {/* Download start */}
       <motion.section
         id="download"
-        // ref={downloadRef}
-        // style={{
-        //   y: downloadY,
-        //   // opacity: downloadOpacity,
-        //   filter: downloadFilter,
-        // }}
+        
         transition={{ type: "spring", stiffness: 120, damping: 18 }}
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24"
       >
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-indigo-50 rounded-[32px]" />
-          <div className="absolute -bottom-24 left-12 w-64 h-64 bg-emerald-300/30 blur-3xl rounded-full" />
-          <div className="absolute -top-16 right-6 w-48 h-48 bg-indigo-300/40 blur-3xl rounded-full" />
-        </div>
-        <div className="overflow-hidden rounded-[32px] border border-black/5 bg-white/80 shadow-sm shadow-emerald-200/50 backdrop-blur-xl">
+        
+        <div className="overflow-hidden rounded-[32px] border border-black/5 bg-white/80 shadow-sm shadow-black/20 backdrop-blur-xl">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr,0.8fr] gap-10 lg:gap-14 p-8 sm:p-12">
             <div className="space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
-                Download
-              </p>
+              
               <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
                 Take Bookmarked everywhere you browse
               </h2>
@@ -338,14 +327,13 @@ export default function Landing() {
               </div>
             </div>
             <div className="relative">
-              <div className="absolute -top-6 right-6 h-16 w-16 rounded-full bg-white/70 backdrop-blur border border-black/5 shadow-lg shadow-indigo-200/40 animate-ping" />
-              <div className="relative rounded-[28px] border border-black/5 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6 shadow-2xl shadow-emerald-300/30">
+              <div className="relative rounded-[28px] border border-black/5 bg-black p-6">
                 <div className="flex justify-between items-center text-sm text-white/70 mb-6">
                   <span className="px-3 py-1 rounded-full bg-white/10">
                     Live preview
                   </span>
-                  <span className="inline-flex items-center gap-2 text-emerald-200">
-                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="inline-flex items-center gap-2 text-emerald-500">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 backdrop-blur border border-black/5 animate-pulse" />
                     Syncing
                   </span>
                 </div>
@@ -413,23 +401,13 @@ export default function Landing() {
       {/* Footer start*/}
       <motion.section
         id="about"
-        // style={{ opacity }}
-        // ref={triggerRef}
-        // transition={{ duration: 0.5, delay: 0.2 }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="relative overflow-hidden rounded-[32px] border border-black/5 bg-black text-white shadow-md shadow-black/20">
-          {/* <div className="absolute inset-0">
-            <div className="absolute -top-20 left-10 h-64 w-64 rounded-full bg-emerald-400/25 blur-3xl" />
-            <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.05),transparent_25%)]" />
-          </div> */}
+          
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr,0.9fr] gap-12 p-8 sm:p-12">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
-                {/* <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" /> */}
-                About Bookmarked
-              </div>
+              
               <h3 className="text-4xl lg:text-5xl font-black leading-tight">
                 The calm way to remember everything you find on the web
               </h3>
