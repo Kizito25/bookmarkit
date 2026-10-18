@@ -418,16 +418,16 @@ export default function Landing() {
         // transition={{ duration: 0.5, delay: 0.2 }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="relative overflow-hidden rounded-[32px] border border-black/5 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 text-white shadow-md shadow-emerald-300/20">
-          <div className="absolute inset-0">
+        <div className="relative overflow-hidden rounded-[32px] border border-black/5 bg-black text-white shadow-md shadow-black/20">
+          {/* <div className="absolute inset-0">
             <div className="absolute -top-20 left-10 h-64 w-64 rounded-full bg-emerald-400/25 blur-3xl" />
             <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.05),transparent_25%)]" />
-          </div>
+          </div> */}
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr,0.9fr] gap-12 p-8 sm:p-12">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
+                {/* <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" /> */}
                 About Bookmarked
               </div>
               <h3 className="text-4xl lg:text-5xl font-black leading-tight">
@@ -449,7 +449,7 @@ export default function Landing() {
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 shadow-lg shadow-emerald-500/10"
+                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3"
                   >
                     <p className="text-2xl font-black">{item.title}</p>
                     <p className="text-sm text-gray-200/80">{item.subtitle}</p>
@@ -465,6 +465,7 @@ export default function Landing() {
                 </Link>
                 <a
                   href="#download"
+                  
                   className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white"
                 >
                   See how it works
@@ -518,7 +519,7 @@ export default function Landing() {
                   </div>
                 </div>
               ))}
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-gray-200/80 shadow-lg shadow-emerald-500/10">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-gray-200/80">
                 Built with security in mind, RLS-protected tables, and real-time
                 subscriptions so you own your data from day one.
               </div>
